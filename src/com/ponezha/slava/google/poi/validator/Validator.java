@@ -9,14 +9,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Validator {
 	WebDriver driver;
 	ArrayList<PointOfInterest> listOfValidPoi = new ArrayList<PointOfInterest>();
 
 	public Validator() throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver", "/Users/slava/Desktop/WebDrivers/chromedriver");
-
+		//System.setProperty("webdriver.chrome.driver", "/Users/slava/Desktop/WebDrivers/chromedriver");
+		WebDriverManager.chromiumdriver().setup();
 		this.driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 
